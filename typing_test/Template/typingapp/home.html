@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Speed Test</title>
+</head>
+<style>
+    .texta{
+        font-size: large;
+        margin-top: 3px;
+        padding-left: 4px;
+        padding-right: 4px;
+        color: rgb(7, 6, 6);
+        background-color: yellow;
+    }
+    .sub:hover{
+        background-color: rgb(9, 123, 238);
+        color: rgb(252, 246, 246);
+        cursor: pointer;
+
+    }
+    .sub{
+        position: absolute;
+        margin-left: 47%;
+        background-color: rgb(222, 238, 6);
+        color: black;
+
+
+    }
+</style>
+<body><div class="texta"><center>{% if text %}
+    {{text}}
+    {% endif %}
+    
+    </div>
+    <p style="color: rgb(0, 184, 230);font-size: medium;">Enter the Text in below box :</p>
+    <form action="Check" method="POST"  enctype="multipart/form-data">
+        {% csrf_token %}
+    <center><textarea name="text_data" rows="25" cols="120"></textarea></center>
+</center>
+    <br>
+    <div class="sub1">
+    <button class="sub" type="submit" >submit</button>
+    </div>
+    </form>
+</body>
+</html>

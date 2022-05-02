@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Speed Result</title>
+</head>
+<style>
+    .tex{
+        color: rgb(253, 249, 249);
+        background-color: rgb(9, 204, 172);
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    .accu{
+        color:green;
+    }
+    .time{
+        color: rgb(236, 203, 13);
+    }
+    .wpm{
+        color: aqua;
+    }
+    .err{
+        color: red;
+    }
+    .sub:hover{
+        background-color: rgb(1, 124, 247);
+        color: rgb(248, 239, 239);
+        
+
+    }
+    .sub{
+        position: absolute;
+        margin-left: 47%;
+        cursor: pointer;
+        color: rgb(135, 3, 211);
+        background-color: rgb(37, 231, 12);
+
+    }
+</style>
+<body>
+
+    <p><center><div  class="tex">{% if dic %}
+        
+        You have Written : {{dic.data_recived}}
+        {% endif %}</div>
+        </center></p>
+    <p> <center>
+        <div class="accu">{% if dic %}
+        Accuracy : {{dic.accurac}}
+        {% endif %}</div>
+        </center></p>
+        <p><center><div class="wpm">{% if dic  %}
+           Word Per Minute: {{dic.wpm}}
+            {% endif %}</div>
+            </center></p>
+            <p><center><div class="time">{% if dic %}
+                Time taken : {{dic.time}}
+                {% endif %}</div>
+                </center></p>
+                <p><center><div class="err">{% if dic %}
+                    Error in Percent : {{dic.error}}
+                    {% endif %}</div>
+                    </center></p>
+</body>
+<form action="index" >
+    <button class="sub" type="submit" >Re-test</button>
+</form>
+</html>
